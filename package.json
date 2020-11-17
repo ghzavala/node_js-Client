@@ -1,0 +1,23 @@
+{
+  "name": "node_js-client",
+  "version": "1.0.0",
+  "description": "Aplicación cliente para conectarse a la API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghzavala/node_js-Client.git"
+  },
+  "author": "ghzavala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghzavala/node_js-Client/issues"
+  },
+  "homepage": "https://github.com/ghzavala/node_js-Client#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
+  }
+}
