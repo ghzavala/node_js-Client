@@ -10,13 +10,28 @@ app.set("view engine", "handlebars")
 app.listen(2000)
 app.use( express.static( "public" ))
 
+app.get("/favicon.ico", (req, res) => {
+    res.writeHead(404, { "Content-Type" : "text/plain"})
+    res.end("Chrome y su favicon.ico")
+})
+
 app.get("/test", async (req, res) => {
 
     const { data : peliculas } = await axios.get("http://localhost:1000/api/v1/pelicula")
 
     console.log(peliculas)
-
+    
     res.end("Mira en la consola si hay datos de la API")
+})
+
+app.get("/panel", async (req, res) => {
+    
+    const { data : peliculas } = await axios.get("http://localhost:1000/api/v1/pelicula")
+
+    console.log(peliculas)
+
+    res.render("panel", { titulo : "Catálogo de Películas", peliculas })
+
 })
 
 app.get("/:seccion?", (req, res) => {
